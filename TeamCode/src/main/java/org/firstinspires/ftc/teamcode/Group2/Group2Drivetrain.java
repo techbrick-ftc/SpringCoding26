@@ -5,14 +5,14 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
-@TeleOp(name="Drivetrain Code")
-public class Drivetrain extends OpMode {
+@TeleOp(name="Group 2 Drivetrain Code")
+public class Group2Drivetrain extends OpMode {
 
     // Declare the motors
     DcMotor frontLeft;
     DcMotor frontRight;
     DcMotor backLeft;
-    DcMotor backRight
+    DcMotor backRight;
 
     // Declare the variables
     double leftPow;
@@ -43,4 +43,4 @@ public class Drivetrain extends OpMode {
         frontRight.setPower(rightPow);
         backRight.setPower(rightPow);
     }
-
+}
