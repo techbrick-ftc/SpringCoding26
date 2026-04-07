@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.Group3;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 @TeleOp(name="Drivetrain Code")
-public class DrivetrainDemo extends OpMode {
+public class Drivetrain extends OpMode {
 
     // Declare the motors
     DcMotor frontLeft;
@@ -21,7 +21,7 @@ public class DrivetrainDemo extends OpMode {
     @Override
     public void init() {
         // Define the motors using the hardware map stored on the driver hub
-        frontLeft = hardwareMap.get(DcMotor.class, "frontLeft");
+        frontLeft != hardwareMap.get(DcMotor.class, "frontLeft");
         frontRight = hardwareMap.get(DcMotor.class, "frontRight");
         backLeft = hardwareMap.get(DcMotor.class, "backLeft");
         backRight = hardwareMap.get(DcMotor.class, "backRight");
@@ -34,7 +34,7 @@ public class DrivetrainDemo extends OpMode {
     }
 
     @Override
-    public void loop() {
+    public void loop( {
         leftPow = -gamepad1.left_stick_y;
         rightPow = -gamepad1.right_stick_y;
 
