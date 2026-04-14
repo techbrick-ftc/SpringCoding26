@@ -13,11 +13,13 @@ public class Group2Drivetrain extends OpMode {
     DcMotor frontRight;
     DcMotor backLeft;
     DcMotor backRight;
+    DcMotor flywheel;
 
     // Declare the variables
     double leftPow;
     double rightPow;
 
+    boolean slowMode = false;
     @Override
     public void init() {
         // Define the motors using the hardware map stored on the driver hub
@@ -25,6 +27,7 @@ public class Group2Drivetrain extends OpMode {
         frontRight = hardwareMap.get(DcMotor.class, "frontRight");
         backLeft = hardwareMap.get(DcMotor.class, "backLeft");
         backRight = hardwareMap.get(DcMotor.class, "backRight");
+        flywheel = hardwareMap.get(DcMotor.class, "flywheel");
 
         // Set the direction of the motors to account for mounting orientation
         frontRight.setDirection(DcMotorSimple.Direction.REVERSE);
@@ -35,12 +38,13 @@ public class Group2Drivetrain extends OpMode {
 
     @Override
     public void loop() {
-        leftPow = -gamepad1.left_stick_y;
-        rightPow = -gamepad1.right_stick_y;
+        double y = -gamepad1.left_stick_y; // Remember, Y stick is reversed!
+        double x = gamepad1.left_stick_x;
+        double rx = gamepad1.right_stick_x;
 
-        frontLeft.setPower(leftPow);
-        backLeft.setPower(leftPow);
-        frontRight.setPower(rightPow);
-        backRight.setPower(rightPow);
+        frontLeft.setPower(y + x + rx);
+        backLeft.setPower(y - x + rx);
+        frontRight.setPower(y - x - rx);
+        backRight.setPower(y + x - rx);
     }
 }

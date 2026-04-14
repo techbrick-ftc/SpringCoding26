@@ -10,7 +10,7 @@ public class Drivetrain extends OpMode {
 
     // Declare the motors
     DcMotor frontLeft;
-    DcMotor frontRight
+    DcMotor frontRight;
     DcMotor backLeft;
     DcMotor backRight;
 
